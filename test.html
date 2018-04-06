@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css" />
+</head>
+<body>
+<div>
+    <button type="button" onclick="loadDoc()">Click</button>
+    <p id="demo"></p>
+</div>
+<div id="form" style="width: 750px;">
+    <div class="w2ui-page page-0">
+        <div class="w2ui-field">
+            <label>RecId:</label>
+            <div>
+                <input name="recid" type="text" maxlength="100" size="60"/>
+            </div>
+        </div>
+        <div class="w2ui-field">
+            <label>First Name:</label>
+            <div>
+                <input name="fname" type="text" maxlength="100" size="60"/>
+            </div>
+        </div>
+        <div class="w2ui-field">
+            <label>Last Name:</label>
+            <div>
+                <input name="lname" type="text" maxlength="100" size="60"/>
+            </div>
+        </div>
+        <div class="w2ui-field">
+            <label>Email:</label>
+            <div>
+                <input name="email" type="text" maxlength="100" size="60"/>
+            </div>
+        </div>
+        <div class="w2ui-field">
+            <label>Date:</label>
+            <div>
+                <input name="sdate" type="text" maxlength="100" size="60"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="w2ui-buttons">
+        <button class="w2ui-btn" name="reset">Reset</button>
+        <button class="w2ui-btn" name="save">Save</button>
+    </div>
+</div>
+
+<div id="grid" style="width: 100%; height: 350px;"></div>
+
+<script type="text/javascript">
+
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "http://localhost:8080/rest", true);
+      xhttp.send();
+    }    
+
+</script>
+
+<script type="text/javascript">
+// w2utils.settings['dataType'] = 'RESTFULL'
+$(function () {
+    $('#form').w2form({ 
+        name  : 'form11',
+        url      : {
+            get  : '/w2ui_rest',
+            save : '/w2ui_rest' 
+        },
+        recid: 3,
+        fields: [
+            { field: 'recid', type: 'text', required: true },
+            { field: 'fname', type: 'text', required: true },
+            { field: 'lname', type: 'text', required: true },
+            { field: 'email', type: 'text', required: true },
+            { field: 'sdate', type: 'date', required: true }
+        ],
+        actions: {
+            reset: function () {
+                this.clear();
+            },
+            save: function () {
+                this.save();
+            }
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#grid').w2grid({ 
+        name: 'grid', 
+        url: '/w2ui_rest',
+
+        show: {
+            toolbar: true,
+            toolbarSave: true,
+            toolbarDelete: true
+        },
+
+        searches: [                
+            { field: 'fname', caption: 'First Name', type: 'text' },
+            { field: 'lname', caption: 'Last Name', type: 'text' },
+            { field: 'email', caption: 'Email', type: 'text' }
+        ],
+        columns: [                
+            { field: 'recid', caption: 'ID', size: '50px', sortable: true },
+            { field: 'fname', caption: 'First Name', size: '30%', sortable: true, editable: { type: 'text' } },
+            { field: 'lname', caption: 'Last Name', size: '30%', sortable: true, editable: { type: 'text' } },
+            { field: 'email', caption: 'Email', size: '40%', editable: { type: 'text' } },
+            { field: 'sdate', caption: 'Start Date', size: '120px', editable: { type: 'date' } }
+        ]
+    });    
+});
+</script>
+</body>
+</html>

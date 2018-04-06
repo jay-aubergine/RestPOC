@@ -1,0 +1,19 @@
+{
+	"users": [
+            { "fname": "John", "lname": "doe", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Stuart", "lname": "Motzart", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Jin", "lname": "Franson", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Susan", "lname": "Ottie", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Kelly", "lname": "Silver", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Francis", "lname": "Gatos", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Mark", "lname": "Welldo", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Thomas", "lname": "Bahh", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Sergei", "lname": "Rachmaninov", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Jill", "lname": "Doe", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Frank", "lname": "Motzart", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Peter", "lname": "Franson", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Andrew", "lname": "Ottie", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Manny", "lname": "Silver", "email": "jdoe@gmail.com", "sdate": "4/3/2012" },
+            { "fname": "Ben", "lname": "Gatos", "email": "jdoe@gmail.com", "sdate": "4/3/2012" }
+	]
+}
